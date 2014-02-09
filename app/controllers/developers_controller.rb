@@ -43,7 +43,7 @@ class DevelopersController < ApplicationController
       :name, :city, :speciality, :current_position, :current_company, :time_at_current_company,
       :technologies, :skills, :birthday, :linkedin, :github, :other_links, :recommended_by,
       :notes, :initial_speaking_notes, :tech_interview_notes, :vlad_notes, :test_assignment_notes,
-      :is_accepted, :is_rejected
+      :is_need_speaking, :is_accepted, :is_rejected
     )
   end
 end

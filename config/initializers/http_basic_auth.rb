@@ -1,0 +1,1 @@
+HTTP_AUTH = File.read('config/auth.txt').strip

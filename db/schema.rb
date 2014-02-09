@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 20140209173231) do
     t.text     "tech_interview_notes"
     t.text     "vlad_notes"
     t.text     "test_assignment_notes"
+    t.boolean  "is_need_speaking"
     t.boolean  "is_accepted"
     t.boolean  "is_rejected"
     t.datetime "created_at"
