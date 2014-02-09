@@ -9,7 +9,9 @@ class CreateDeveloper < ActiveRecord::Migration
       t.text :technologies
       t.text :skills
       t.string :birthday
-      t.text :links
+      t.string :linkedin
+      t.string :github
+      t.text :other_links
 
       t.text :recommended_by
       t.text :notes
@@ -31,7 +33,9 @@ class CreateDeveloper < ActiveRecord::Migration
     add_index :developers, :technologies
     add_index :developers, :skills
     add_index :developers, :birthday
-    add_index :developers, :links
+    add_index :developers, :linkedin
+    add_index :developers, :github
+    add_index :developers, :other_links
     add_index :developers, :recommended_by
     add_index :developers, :notes
     add_index :developers, :initial_speaking_notes

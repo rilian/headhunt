@@ -25,7 +25,9 @@ ActiveRecord::Schema.define(version: 20140209173231) do
     t.text     "technologies"
     t.text     "skills"
     t.string   "birthday"
-    t.text     "links"
+    t.string   "linkedin"
+    t.string   "github"
+    t.text     "other_links"
     t.text     "recommended_by"
     t.text     "notes"
     t.text     "initial_speaking_notes"
@@ -42,12 +44,14 @@ ActiveRecord::Schema.define(version: 20140209173231) do
   add_index "developers", ["city"], name: "index_developers_on_city", using: :btree
   add_index "developers", ["current_company"], name: "index_developers_on_current_company", using: :btree
   add_index "developers", ["current_position"], name: "index_developers_on_current_position", using: :btree
+  add_index "developers", ["github"], name: "index_developers_on_github", using: :btree
   add_index "developers", ["initial_speaking_notes"], name: "index_developers_on_initial_speaking_notes", using: :btree
   add_index "developers", ["is_accepted"], name: "index_developers_on_is_accepted", using: :btree
   add_index "developers", ["is_rejected"], name: "index_developers_on_is_rejected", using: :btree
-  add_index "developers", ["links"], name: "index_developers_on_links", using: :btree
+  add_index "developers", ["linkedin"], name: "index_developers_on_linkedin", using: :btree
   add_index "developers", ["name"], name: "index_developers_on_name", unique: true, using: :btree
   add_index "developers", ["notes"], name: "index_developers_on_notes", using: :btree
+  add_index "developers", ["other_links"], name: "index_developers_on_other_links", using: :btree
   add_index "developers", ["recommended_by"], name: "index_developers_on_recommended_by", using: :btree
   add_index "developers", ["skills"], name: "index_developers_on_skills", using: :btree
   add_index "developers", ["tech_interview_notes"], name: "index_developers_on_tech_interview_notes", using: :btree
