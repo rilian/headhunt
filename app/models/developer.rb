@@ -1,4 +1,4 @@
-class Developer < ActiveRecordBase
+class Developer < ActiveRecord::Base
   validates_uniqueness_of :name
 
 end
