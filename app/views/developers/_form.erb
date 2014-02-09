@@ -1,0 +1,26 @@
+<%= simple_form_for @developer do |f| %>
+
+  <%= f.input :name, input_html: { class: 'input-xxlarge' } %>
+  <%= f.input :city, input_html: { class: 'input-xxlarge' } %>
+  <%= f.input :speciality, as: :check_boxes, collection: %w[Ruby Angular Frontend Java] %>
+  <%= f.input :current_position, input_html: { class: 'input-xxlarge' } %>
+  <%= f.input :current_company, input_html: { class: 'input-xxlarge' } %>
+  <%= f.input :time_at_current_company, input_html: { class: 'input-xxlarge' } %>
+  <%= f.input :technologies, input_html: { class: 'input-xxlarge', rows: 5 } %>
+  <%= f.input :skills, input_html: { class: 'input-xxlarge', rows: 5 } %>
+  <%= f.input :birthday, input_html: { class: 'input-xxlarge' } %>
+  <%= f.input :linkedin, input_html: { class: 'input-xxlarge' } %>
+  <%= f.input :github, input_html: { class: 'input-xxlarge' } %>
+  <%= f.input :other_links, input_html: { class: 'input-xxlarge', rows: 2 } %>
+  <%= f.input :recommended_by, input_html: { class: 'input-xxlarge' } %>
+  <%= f.input :notes, input_html: { class: 'input-xxlarge', rows: 3 } %>
+  <%= f.input :initial_speaking_notes, input_html: { class: 'input-xxlarge', rows: 2 } %>
+  <%= f.input :tech_interview_notes, input_html: { class: 'input-xxlarge', rows: 2 } %>
+  <%= f.input :vlad_notes, input_html: { class: 'input-xxlarge', rows: 2 } %>
+  <%= f.input :test_assignment_notes, input_html: { class: 'input-xxlarge', rows: 2 } %>
+
+  <%= f.input :is_accepted %>
+  <%= f.input :is_rejected %>
+
+  <%= f.button :submit %>
+<% end %>

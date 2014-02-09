@@ -10,14 +10,14 @@ gem 'polyamorous', github: 'activerecord-hackery/polyamorous'
 gem 'ransack', github: 'activerecord-hackery/ransack', branch: 'rails-4.1'
 
 # frontend
-gem 'sass-rails'
 gem 'uglifier'
 gem 'coffee-rails'
-gem 'therubyracer', platforms: :ruby
 gem 'jquery-rails'
 gem 'turbolinks'
-gem 'simple_form'
+gem 'less-rails'
+gem 'therubyracer', platforms: :ruby
 gem 'twitter-bootstrap-rails'
+gem 'simple_form'
 gem 'quiet_assets'
 gem 'bootstrap-sass-rails'
 
@@ -27,4 +27,6 @@ end
 
 group :development do
   gem 'debugger'
+  gem 'capistrano', '~> 2.15.5'
+  gem 'capistrano-rbenv'
 end

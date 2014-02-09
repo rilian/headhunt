@@ -3,6 +3,7 @@ class CreateDeveloper < ActiveRecord::Migration
     create_table :developers do |t|
       t.string :name
       t.string :city
+      t.string :speciality
       t.string :current_position
       t.string :current_company
       t.string :time_at_current_company
@@ -13,12 +14,13 @@ class CreateDeveloper < ActiveRecord::Migration
       t.string :github
       t.text :other_links
 
-      t.text :recommended_by
+      t.string :recommended_by
       t.text :notes
       t.text :initial_speaking_notes
       t.text :tech_interview_notes
       t.text :vlad_notes
       t.text :test_assignment_notes
+
       t.boolean :is_accepted
       t.boolean :is_rejected
 
@@ -27,6 +29,7 @@ class CreateDeveloper < ActiveRecord::Migration
 
     add_index :developers, :name, unique: true
     add_index :developers, :city
+    add_index :developers, :speciality
     add_index :developers, :current_position
     add_index :developers, :current_company
     add_index :developers, :time_at_current_company

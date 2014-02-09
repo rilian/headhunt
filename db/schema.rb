@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20140209173231) do
   create_table "developers", force: true do |t|
     t.string   "name"
     t.string   "city"
+    t.string   "speciality"
     t.string   "current_position"
     t.string   "current_company"
     t.string   "time_at_current_company"
@@ -28,7 +29,7 @@ ActiveRecord::Schema.define(version: 20140209173231) do
     t.string   "linkedin"
     t.string   "github"
     t.text     "other_links"
-    t.text     "recommended_by"
+    t.string   "recommended_by"
     t.text     "notes"
     t.text     "initial_speaking_notes"
     t.text     "tech_interview_notes"
@@ -54,6 +55,7 @@ ActiveRecord::Schema.define(version: 20140209173231) do
   add_index "developers", ["other_links"], name: "index_developers_on_other_links", using: :btree
   add_index "developers", ["recommended_by"], name: "index_developers_on_recommended_by", using: :btree
   add_index "developers", ["skills"], name: "index_developers_on_skills", using: :btree
+  add_index "developers", ["speciality"], name: "index_developers_on_speciality", using: :btree
   add_index "developers", ["tech_interview_notes"], name: "index_developers_on_tech_interview_notes", using: :btree
   add_index "developers", ["technologies"], name: "index_developers_on_technologies", using: :btree
   add_index "developers", ["test_assignment_notes"], name: "index_developers_on_test_assignment_notes", using: :btree
