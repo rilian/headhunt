@@ -21,6 +21,7 @@
     <th>Accepted</th>
     <th>Rejected</th>
     <th>Working at us</th>
+    <th>Not Interested</th>
     <th>Added at</th>
     <th>Actions</th>
   </thead>
@@ -52,6 +53,7 @@
         <th><%= d.is_accepted? ? 'yes' : '' %></th>
         <th><%= d.is_rejected? ? 'yes' : '' %></th>
         <th><%= d.is_working? ? 'yes' : '' %></th>
+        <th><%= d.is_not_interested? ? 'yes' : '' %></th>
         <th><%= d.created_at.try(:strftime, '%H:%M %d-%b-%Y') %></th>
         <td><%= link_to 'Delete', developer_path(d), method: :delete, data: { confirm: 'Sure ?' }, class: 'btn btn-danger' %></td>
       </tr>
