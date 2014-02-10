@@ -1,9 +1,11 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: headhunt_dev
+  database: headhunt_development
   pool: 5
   host: localhost
+  username: rails
+  password: rails
 
 test:
   adapter: postgresql
@@ -11,10 +13,13 @@ test:
   database: headhunt_test
   pool: 5
   host: localhost
+  username: rails
+  password: rails
 
 production:
   adapter: postgresql
   encoding: unicode
-  database: headhunt_prod
+  database: headhunt_production
   pool: 5
-  host: localhost
+  host: 127.0.0.1
+  username: postgres
