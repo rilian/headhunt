@@ -18,6 +18,7 @@ gem 'jquery-rails'
 gem 'uglifier'
 gem 'therubyracer', platforms: :ruby
 gem 'quiet_assets'
+gem 'less-rails'
 gem 'bootstrap-sass-rails'
 
 group :production do
