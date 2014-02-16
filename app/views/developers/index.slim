@@ -5,6 +5,7 @@ table.table.table-striped.table-bordered.table-condensed
     th #
     th Info
     th Time as current company
+    th Speciality
     th Technologies
     th Skills
     th Links
@@ -27,16 +28,16 @@ table.table.table-striped.table-bordered.table-condensed
           br
           = d.city
           br
-          = (d.speciality || []).delete_if(&:empty?).join(', ')
-          br
           = d.current_position
           br
           = d.current_company
         td 
           = d.time_at_current_company
         td 
+          = (d.speciality || []).delete_if(&:empty?).join(', ')
+        td
           = d.technologies
-        td 
+        td
           = d.skills
         td
           - if d.linkedin.present?
