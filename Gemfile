@@ -11,6 +11,7 @@ gem 'ransack', github: 'activerecord-hackery/ransack', branch: 'rails-4.1'
 
 # frontend
 gem 'simple_form'
+gem 'slim'
 
 gem 'coffee-rails'
 gem 'jquery-rails'

@@ -1,0 +1,83 @@
+a.btn.btn-success href="#{new_developer_path}" New Developer
+hr
+table.table.table-striped.table-bordered.table-condensed
+  thead
+    th #
+    th Name
+    th City
+    th Speciality
+    th Current Position
+    th Current Company
+    th Time as current company
+    th Technologies
+    th Skills
+    th Birthday
+    th LinkedIn
+    th Github
+    th Other Links
+    th Recommended By
+    th Notes
+    th Need Speaking
+    th Accepted
+    th Rejected
+    th Working at us
+    th Not Interested
+    th Added at
+    th Actions
+  tbody
+    - @developers.each do |d|
+      tr
+        td 
+          = link_to d.id, edit_developer_path(d)
+        td 
+          = link_to d.name, edit_developer_path(d)
+        td 
+          = d.city
+        td 
+          = (d.speciality || []).delete_if(&:empty?).join(', ')
+        td 
+          = d.current_position
+        td 
+          = d.current_company
+        td 
+          = d.time_at_current_company
+        td 
+          = d.technologies
+        td 
+          = d.skills
+        td
+          = d.birthday
+        td
+          = link_to 'Linkedin', d.linkedin if d.linkedin.present?
+        td
+          = link_to 'Github', d.github if d.github.present?
+        td
+          = d.other_links
+        td
+          = d.recommended_by
+        td 
+          p 
+            = d.notes
+          p
+            = d.initial_speaking_notes
+          p
+            = d.tech_interview_notes
+          p
+            = d.vlad_notes
+          p
+            = d.test_assignment_notes
+        
+        th
+          = d.is_need_speaking? ? 'yes' : ''
+        th
+          = d.is_accepted? ? 'yes' : ''
+        th
+          = d.is_rejected? ? 'yes' : ''
+        th
+          = d.is_working? ? 'yes' : ''
+        th
+          = d.is_not_interested? ? 'yes' : ''
+        th
+          = d.created_at.try(:strftime, '%H:%M %d-%b-%Y')
+        td
+          = link_to 'Delete', developer_path(d), method: :delete, data: { confirm: 'Sure ?' }, class: 'btn btn-danger'
