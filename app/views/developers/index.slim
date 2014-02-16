@@ -3,26 +3,18 @@ hr
 table.table.table-striped.table-bordered.table-condensed
   thead
     th #
-    th Name
-    th City
-    th Speciality
-    th Current Position
-    th Current Company
+    th Info
     th Time as current company
     th Technologies
     th Skills
-    th Birthday
-    th LinkedIn
-    th Github
-    th Other Links
-    th Recommended By
+    th Links
     th Notes
     th Need Speaking
     th Accepted
     th Rejected
     th Working at us
     th Not Interested
-    th Added at
+    th Date
     th Actions
   tbody
     - @developers.each do |d|
@@ -31,13 +23,14 @@ table.table.table-striped.table-bordered.table-condensed
           = link_to d.id, edit_developer_path(d)
         td 
           = link_to d.name, edit_developer_path(d)
-        td 
+          = " (#{d.birthday})" if d.birthday.present?
+          br
           = d.city
-        td 
+          br
           = (d.speciality || []).delete_if(&:empty?).join(', ')
-        td 
+          br
           = d.current_position
-        td 
+          br
           = d.current_company
         td 
           = d.time_at_current_company
@@ -46,16 +39,14 @@ table.table.table-striped.table-bordered.table-condensed
         td 
           = d.skills
         td
-          = d.birthday
-        td
-          = link_to 'Linkedin', d.linkedin if d.linkedin.present?
-        td
-          = link_to 'Github', d.github if d.github.present?
-        td
+          - if d.linkedin.present?
+            = link_to 'Linkedin', d.linkedin if d.linkedin.present?
+            br
+          - if d.github.present?
+            = link_to 'Github', d.github
+            br
           = d.other_links
         td
-          = d.recommended_by
-        td 
           p 
             = d.notes
           p
@@ -78,6 +69,8 @@ table.table.table-striped.table-bordered.table-condensed
         th
           = d.is_not_interested? ? 'yes' : ''
         th
-          = d.created_at.try(:strftime, '%H:%M %d-%b-%Y')
+          = d.created_at.try(:strftime, '%d-%b-%Y')
+          br
+          = d.recommended_by
         td
           = link_to 'Delete', developer_path(d), method: :delete, data: { confirm: 'Sure ?' }, class: 'btn btn-danger'
