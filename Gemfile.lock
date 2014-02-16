@@ -73,7 +73,6 @@ GEM
       execjs
     coffee-script-source (1.7.0)
     columnize (0.3.6)
-    commonjs (0.2.7)
     debugger (1.6.5)
       columnize (>= 0.3.1)
       debugger-linecache (~> 1.2.0)
@@ -89,18 +88,13 @@ GEM
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
     json (1.8.1)
-    kgio (2.9.1)
-    less (2.4.0)
-      commonjs (~> 0.2.7)
-    less-rails (2.4.2)
-      actionpack (>= 3.1)
-      less (~> 2.4.0)
+    kgio (2.9.2)
     libv8 (3.16.14.3)
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.25.1)
-    minitest (5.2.2)
+    minitest (5.2.3)
     multi_json (1.8.4)
     net-scp (1.1.2)
       net-ssh (>= 2.6.5)
@@ -161,13 +155,6 @@ GEM
     treetop (1.4.15)
       polyglot
       polyglot (>= 0.3.1)
-    turbolinks (2.2.1)
-      coffee-rails
-    twitter-bootstrap-rails (2.2.8)
-      actionpack (>= 3.1)
-      execjs
-      rails (>= 3.1)
-      railties (>= 3.1)
     tzinfo (1.1.0)
       thread_safe (~> 0.1)
     uglifier (2.4.0)
@@ -188,7 +175,6 @@ DEPENDENCIES
   coffee-rails
   debugger
   jquery-rails
-  less-rails
   pg
   polyamorous!
   quiet_assets
@@ -196,7 +182,5 @@ DEPENDENCIES
   ransack!
   simple_form
   therubyracer
-  turbolinks
-  twitter-bootstrap-rails
   uglifier
   unicorn

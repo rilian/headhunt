@@ -10,14 +10,12 @@ gem 'polyamorous', github: 'activerecord-hackery/polyamorous'
 gem 'ransack', github: 'activerecord-hackery/ransack', branch: 'rails-4.1'
 
 # frontend
-gem 'uglifier'
+gem 'simple_form'
+
 gem 'coffee-rails'
 gem 'jquery-rails'
-gem 'turbolinks'
-gem 'less-rails'
+gem 'uglifier'
 gem 'therubyracer', platforms: :ruby
-gem 'twitter-bootstrap-rails'
-gem 'simple_form'
 gem 'quiet_assets'
 gem 'bootstrap-sass-rails'
 
