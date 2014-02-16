@@ -20,6 +20,7 @@ gem 'therubyracer', platforms: :ruby
 gem 'quiet_assets'
 gem 'less-rails'
 gem 'bootstrap-sass-rails'
+gem 'twitter-bootstrap-rails'
 
 group :production do
  gem 'unicorn'
