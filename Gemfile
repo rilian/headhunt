@@ -10,8 +10,8 @@ gem 'polyamorous', github: 'activerecord-hackery/polyamorous'
 gem 'ransack', github: 'activerecord-hackery/ransack', branch: 'rails-4.1'
 
 # frontend
-gem 'simple_form'
 gem 'slim'
+gem 'simple_form'
 
 gem 'coffee-rails'
 gem 'jquery-rails'
