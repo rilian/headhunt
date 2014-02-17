@@ -43,7 +43,9 @@ class DevelopersController < ApplicationController
       :name, :city, :speciality, :current_position, :current_company, :time_at_current_company,
       :technologies, :skills, :birthday, :linkedin, :github, :other_links, :recommended_by,
       :notes, :initial_speaking_notes, :tech_interview_notes, :vlad_notes, :test_assignment_notes,
-      :is_need_speaking, :is_accepted, :is_rejected, :is_working, :is_not_interested
+      :is_need_speaking, :is_accepted, :is_rejected, :is_working, :is_not_interested, :is_interested,
+      :skype, :email, :is_priority,
+      speciality: []
     )
   end
 end
