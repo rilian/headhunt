@@ -1,20 +1,17 @@
 a.btn.btn-success href="#{new_developer_path}" New Developer
+= render 'filters'
 hr
+= paginate @developers
 table.table.table-striped.table-bordered.table-condensed
   thead
     th #
+    th Status
     th Info
     th Time as current company
     th Speciality
     th Technologies
     th Skills
-    th Links
     th Notes
-    th Need Speaking
-    th Accepted
-    th Rejected
-    th Working at us
-    th Not Interested
     th Date
     th Actions
   tbody
@@ -22,56 +19,81 @@ table.table.table-striped.table-bordered.table-condensed
       tr
         td 
           = link_to d.id, edit_developer_path(d)
+        td
+          - if d.is_priority?
+            = 'Priority'
+            br
+          - if d.is_need_speaking?
+            = 'Need speaking'
+            br
+          - if d.is_accepted?
+            = 'Accepted'
+            br
+          - if d.is_rejected?
+            = 'Rejected'
+            br
+          - if d.is_working?
+            = 'Working with us'
+            br
+          - if d.is_interested?
+            = 'Interested'
+            br
+          - if d.is_not_interested?
+            = 'Not interested'
+            br
+
         td 
           = link_to d.name, edit_developer_path(d)
           = " (#{d.birthday})" if d.birthday.present?
           br
-          = d.city
+          = "email: #{d.email}"
+          br
+          = "skype: #{d.skype}"
+          br
+          = "city: #{d.city}"
           br
           = d.current_position
           br
           = d.current_company
-        td 
-          = d.time_at_current_company
-        td 
-          = (d.speciality || []).delete_if(&:empty?).join(', ')
-        td
-          = d.technologies
-        td
-          = d.skills
-        td
+          br
           - if d.linkedin.present?
             = link_to 'Linkedin', d.linkedin if d.linkedin.present?
             br
           - if d.github.present?
             = link_to 'Github', d.github
             br
-          = d.other_links
+          - if d.other_links.present?
+            = d.other_links
+            br
+        td
+          = d.time_at_current_company
+        td 
+          = (d.speciality || []).delete_if(&:empty?).join(', ')
+        td
+          = d.technologies
+        td
+          = (d.skills.gsub(/(\d+)(\w){1}/) { "[#{$1}] #{$2}"})\
+              .gsub(/SQL/i, '<b>SQL</b>')\
+              .gsub(/Angular/i, '<b>Angular</b>')\
+              .gsub(/CoffeeScript/i, '<b>CoffeeScript</b>')\
+              .gsub(/JavaScript/i, '<b>JavaScript</b>')\
+              .gsub(/Ruby on Rails/i, '<b>Ruby on Rails</b>')\
+              .gsub(/ruby/i, '<b>Ruby</b>')\
+              .html_safe
         td
           p 
-            = d.notes
+            = "notes: #{d.notes}" if d.notes.present?
           p
-            = d.initial_speaking_notes
+            = "initial_speaking_notes: #{d.initial_speaking_notes}" if d.initial_speaking_notes.present?
           p
-            = d.tech_interview_notes
+            = "tech_interview_notes: #{d.tech_interview_notes}" if d.tech_interview_notes.present?
           p
-            = d.vlad_notes
+            = "vlad_notes: #{d.vlad_notes}" if d.vlad_notes.present?
           p
-            = d.test_assignment_notes
-        
-        th
-          = d.is_need_speaking? ? 'yes' : ''
-        th
-          = d.is_accepted? ? 'yes' : ''
-        th
-          = d.is_rejected? ? 'yes' : ''
-        th
-          = d.is_working? ? 'yes' : ''
-        th
-          = d.is_not_interested? ? 'yes' : ''
-        th
+            = "test_assignment_notes: #{d.test_assignment_notes}" if d.test_assignment_notes.present?
+        td
           = d.created_at.try(:strftime, '%d-%b-%Y')
           br
           = d.recommended_by
         td
-          = link_to 'Delete', developer_path(d), method: :delete, data: { confirm: 'Sure ?' }, class: 'btn btn-danger'
+          = link_to 'X', developer_path(d), method: :delete, data: { confirm: 'Sure ?' }, class: 'btn btn-danger'

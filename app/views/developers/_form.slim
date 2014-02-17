@@ -1,5 +1,7 @@
 = simple_form_for @developer do |f|
   = f.input :name, input_html: { class: 'input-xxlarge' }
+  = f.input :email, input_html: { class: 'input-xxlarge' }
+  = f.input :skype, input_html: { class: 'input-xxlarge' }
   = f.input :city, input_html: { class: 'input-xxlarge' }
   = f.input :speciality, as: :check_boxes, collection: %w[Ruby Angular Frontend Java]
   = f.input :current_position, input_html: { class: 'input-xxlarge' }
@@ -18,10 +20,12 @@
   = f.input :vlad_notes, input_html: { class: 'input-xxlarge', rows: 2 }
   = f.input :test_assignment_notes, input_html: { class: 'input-xxlarge', rows: 2 }
 
+  = f.input :is_priority
   = f.input :is_need_speaking
   = f.input :is_accepted
   = f.input :is_rejected
   = f.input :is_working
+  = f.input :is_interested
   = f.input :is_not_interested
 
   = f.button :submit

@@ -1,6 +1,9 @@
 class DevelopersController < ApplicationController
   def index
-    @developers = Developer.order(id: :desc).all
+    @q = Developer.search(params[:q])
+    @q.sorts = 'is_priority desc' if @q.sorts.empty?
+
+    @developers = @q.result.page(params[:page])
   end
 
   def new
