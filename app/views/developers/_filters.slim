@@ -23,7 +23,17 @@ a.btn href="#{developers_path(q: { \
   is_accepted_not_eq: 'true', \
   is_interested_not_eq: 'true', \
   is_not_interested_not_eq: 'true', \
-  is_need_speaking_eq: 'true' })}" Need Speaking
+  is_need_speaking_eq: 'true', \
+  is_contacted_eq: 'false'  })}" Need Speaking
+
+a.btn href="#{developers_path(q: { \
+  is_working_not_eq: 'true', \
+  is_rejected_not_eq: 'true', \
+  is_accepted_not_eq: 'true', \
+  is_interested_not_eq: 'true', \
+  is_not_interested_not_eq: 'true', \
+  is_need_speaking_eq: 'true', \
+  is_contacted_eq: 'true' })}" Pending Speaking
 
 a.btn href="#{developers_path(q: { \
   is_working_not_eq: 'true', \

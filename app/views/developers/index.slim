@@ -26,6 +26,9 @@ table.table.table-striped.table-bordered.table-condensed
           - if d.is_need_speaking?
             = 'Need speaking'
             br
+          - if d.is_contacted?
+            = 'Contacted'
+            br
           - if d.is_accepted?
             = 'Accepted'
             br
