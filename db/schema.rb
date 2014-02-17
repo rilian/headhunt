@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140210181049) do
+ActiveRecord::Schema.define(version: 20140217162207) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,13 +35,17 @@ ActiveRecord::Schema.define(version: 20140210181049) do
     t.text     "tech_interview_notes"
     t.text     "vlad_notes"
     t.text     "test_assignment_notes"
-    t.boolean  "is_need_speaking"
-    t.boolean  "is_accepted"
-    t.boolean  "is_rejected"
+    t.boolean  "is_need_speaking",        default: false, null: false
+    t.boolean  "is_accepted",             default: false, null: false
+    t.boolean  "is_rejected",             default: false, null: false
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "is_working"
-    t.boolean  "is_not_interested"
+    t.boolean  "is_working",              default: false, null: false
+    t.boolean  "is_not_interested",       default: false, null: false
+    t.boolean  "is_interested",           default: false, null: false
+    t.string   "skype"
+    t.string   "email"
+    t.boolean  "is_priority",             default: false, null: false
   end
 
   add_index "developers", ["birthday"], name: "index_developers_on_birthday", using: :btree
