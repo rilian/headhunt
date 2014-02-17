@@ -44,6 +44,9 @@ table.table.table-striped.table-bordered.table-condensed
           - if d.is_not_interested?
             = 'Not interested'
             br
+          - if d.is_delayed?
+            = 'Delayed'
+            br
 
         td 
           = link_to d.name, edit_developer_path(d)
