@@ -63,7 +63,7 @@ table.table.table-striped.table-bordered.table-condensed
           = d.current_company
           br
           - if d.linkedin.present?
-            = link_to 'Linkedin', d.linkedin if d.linkedin.present?
+            = link_to 'Linkedin', (d.linkedin.start_with?('http://') ? '' : 'http://') + d.linkedin if d.linkedin.present?
             br
           - if d.github.present?
             = link_to 'Github', d.github
@@ -85,6 +85,7 @@ table.table.table-striped.table-bordered.table-condensed
               .gsub(/JavaScript/i, '<b>JavaScript</b>')\
               .gsub(/Ruby on Rails/i, '<b>Ruby on Rails</b>')\
               .gsub(/ruby/i, '<b>Ruby</b>')\
+              .gsub(/android/i, '<b>Android</b>')\
               .html_safe
         td
           p 
